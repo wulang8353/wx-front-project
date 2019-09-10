@@ -1,0 +1,6 @@
+/* page是针对页面，而不是组件。在所有骨架外，会自动增加Page */
+page {
+  font-family: "PingFangSC-Thin";
+  font-size: 32rpx;
+  height: 100%;
+}

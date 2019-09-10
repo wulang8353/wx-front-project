@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="header">
+    <v-epsoide class="epsoide" index="{{classic.index}}"></v-epsoide>
+    <view class="like-container">
+      <v-like class="like" bind:like="onlike" like="{{likeStatus}}" count="{{likeCount}}"></v-like>
+      <v-button class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png" />
+      </v-button>
+    </view>
+  </view>
+  <!-- hidden="" 该属性对自定义组件不太好用 -->
+  <!-- wx:if="" 该属性对所有组件 -->
+  <v-movie wx:if="{{classic.type == 100}}" img="{{classic.image}}" content="{{classic.content}}"></v-movie>
+  <v-music wx:if="{{classic.type == 200}}" title="{{classic.title}}" src="{{classic.url}}" img="{{classic.image}}" content="{{classic.content}}"></v-music>
+  <v-essay wx:if="{{classic.type == 300}}" img="{{classic.image}}" content="{{classic.content}}"></v-essay>
+  <v-navi bind:left="onNext" bind:right="onPrevious" class="navi" title="{{classic.title}}" first="{{first}}" latest="{{latest}}"></v-navi>
+</view>

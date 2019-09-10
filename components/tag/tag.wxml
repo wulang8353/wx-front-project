@@ -1,0 +1,6 @@
+<!-- 普通样式 外部样式 -->
+<!-- 外部样式类：在同一个节点上使用普通样式类和外部样式类时，两个类的优先级是未定义的，因此最好避免这种情况 -->
+<view bind:tap="onTap" class="container tag-class">
+  <text>{{text}}</text>
+  <slot class="after" name="after"></slot>
+</view>

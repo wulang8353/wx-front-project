@@ -1,0 +1,26 @@
+// const ES6语法
+// WXS类似js，不能直接使用js的全部语法
+// 类似过滤器
+
+var format = function(text){
+  //  \\n -> \n
+  // console.log(text) // format会调用两次
+
+  // 每次数据绑定都会执行双花括号的内容
+  // 调用接口获取数据，进行数据初始化，format调用一次
+  // this.setData数据更新，format又调用一次
+  // 由于数据初始化时book是null(还没有获得数据)，所以是undefined
+  if(!text) return 
+  var reg = getRegExp('\\\\n', 'g')
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(array, length){
+  return array.slice(0,length)
+}
+
+// 输出模块
+module.exports = {
+  format: format,
+  limit: limit
+}
